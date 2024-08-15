@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react";
 
 const PhotoCarousel: React.FC = () => {
   const images = [
-    "/images/double.jpg",
-    "/images/centerfold.jpg",
-    "/images/15.jpg",
+    "/images/double.png",
+    "/images/centerfold.png",
+    "/images/15.png",
     // Add more image paths as needed
   ];
 
