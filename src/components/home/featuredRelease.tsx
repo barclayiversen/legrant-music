@@ -27,10 +27,10 @@ const FeaturedRelease: React.FC = () => {
   //   fetchFeaturedRelease();
   // }, []);
 
-  if (isLoading)
-    return <p className="text-white">Loading featured release...</p>;
-  if (error) return <p>{error}</p>;
-  if (!trackData || !trackData.trackId) return null;
+  // if (isLoading)
+  //   return <p className="text-white">Loading featured release...</p>;
+  // if (error) return <p>{error}</p>;
+  // if (!trackData || !trackData.trackId) return null;
 
   const soundcloudEmbedUrl = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1402912576&color=%235bff00&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true`;
 
