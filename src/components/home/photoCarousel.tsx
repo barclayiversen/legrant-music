@@ -1,27 +1,14 @@
 // components/photoCarousel.tsx
+"use client";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 const PhotoCarousel: React.FC = () => {
-  const [images, setImages] = useState<string[]>([]); // Holds an array of image URLs
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        setIsLoading(true);
-        const response = await axios.get("/api/images");
-        setImages(response.data);
-        setIsLoading(false);
-      } catch (error: any) {
-        setError(error);
-        setIsLoading(false);
-      }
-    };
-
-    fetchImages();
-  }, []);
+  const images = [
+    "/images/double.jpg",
+    "/images/centerfold.jpg",
+    "/images/15.jpg",
+    // Add more image paths as needed
+  ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
@@ -50,7 +37,7 @@ const PhotoCarousel: React.FC = () => {
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.targetTouches[0].clientX);
-    setTouchEnd(e.targetTouches[0].clientX); // Should this be setTouchStart?
+    setTouchEnd(e.targetTouches[0].clientX);
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
